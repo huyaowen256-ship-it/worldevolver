@@ -1,0 +1,8 @@
+{
+  "name": "worldevolver",
+  "type": "novel",
+  "ai": "gemini",
+  "method": "three-act",
+  "created": "2026-04-13T09:02:44.755Z",
+  "version": "0.20.0"
+}
