@@ -1,70 +1,118 @@
 {
-  "novel": "[小说名称]",
-  "lastUpdated": "",
-
+  "novel": "WorldEvolver · 世界演化者",
+  "lastUpdated": "2026-04-14",
   "characters": {
-    "[主角名]": {
+    "叶无痕": {
       "relationships": {
         "allies": [],
-        "enemies": [],
+        "enemies": [
+          "林昊（阶级压迫）",
+          "秦铁（被冒犯后产生轻视敌意）"
+        ],
         "romantic": [],
         "family": [],
         "mentors": [],
-        "neutral": [],
+        "neutral": [
+          "张执事",
+          "莫执事"
+        ],
         "unknown": []
       },
       "dynamicRelations": [
         {
-          "character": "[角色名]",
-          "initial": "陌生人",
-          "current": "朋友",
-          "trajectory": "positive",
-          "keyEvents": []
+          "character": "林昊",
+          "initial": "遥不可及的天上地下",
+          "current": "被对方单方面封杀排挤",
+          "trajectory": "negative",
+          "keyEvents": [
+            "第5章饭堂公开下达排挤孤立的绝对命令"
+          ]
+        },
+        {
+          "character": "秦铁",
+          "role": "被下级挑衅",
+          "initial": "无视的蝼蚁",
+          "current": "产生好奇与厌恶的怀疑对象",
+          "trajectory": "negative",
+          "keyEvents": [
+            "第4章藏经阁外叶无痕用暗劲将其手下手臂震断"
+          ]
         }
       ]
     }
   },
-
   "factions": {
-    "[派系名]": {
-      "description": "",
-      "leader": "",
-      "members": [],
-      "goals": [],
+    "天机宗外门顶级圈层": {
+      "description": "以外门排名前二十弟子组成的既得利益集团，占有宗门外门下放的绝大多数资源和地盘。",
+      "leader": "林昊",
+      "members": [
+        "秦铁",
+        "李虎"
+      ],
+      "goals": [
+        "稳固地位，榨取宗门外围利益以积攒内门资本"
+      ],
       "alliedWith": [],
-      "opposedTo": [],
+      "opposedTo": [
+        "任何企图抢夺资源的中下游弟子"
+      ],
       "status": "active"
     }
   },
-
   "relationshipMatrix": {
     "说明": "角色间关系的快速查询矩阵",
-    "matrix": {}
+    "matrix": {
+      "叶无痕_林昊": "水火不容（底层与统治者的不可调和矛盾）"
+    }
   },
-
   "conflicts": {
-    "personal": [],
-    "factional": [],
-    "ideological": []
+    "personal": [
+      "叶无痕在藏经阁外打伤秦铁手下（第4章）"
+    ],
+    "factional": [
+      "林昊派系强行圈占荒灵原南侧资源，剥夺散人与底层弟子发育权利（第5章）"
+    ],
+    "ideological": [
+      "天才碾压一切的傲慢 vs 底层不择手段的逆天求生"
+    ]
   },
-
   "history": [
     {
-      "chapter": 1,
+      "chapter": 4,
       "changes": [
         {
-          "type": "new",
-          "characters": ["A", "B"],
-          "relation": "初次相遇",
-          "impact": "low"
+          "type": "conflict",
+          "characters": [
+            "叶无痕",
+            "秦铁手下"
+          ],
+          "relation": "发生肢体冲突致伤",
+          "impact": "medium"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "changes": [
+        {
+          "type": "blockade",
+          "characters": [
+            "林昊",
+            "叶无痕"
+          ],
+          "relation": "公开决裂与单方面制裁",
+          "impact": "high"
         }
       ]
     }
   ],
-
   "predictions": {
     "说明": "基于当前关系预测的发展",
-    "likely": [],
-    "possible": []
+    "likely": [
+      "大比时秦铁极有可能主动找叶无痕麻烦"
+    ],
+    "possible": [
+      "叶无痕的反杀会引发林氏或秦氏等家族后续势力的连锁下场"
+    ]
   }
 }

@@ -1,62 +1,95 @@
 {
-  "novel": "[小说名称]",
-  "lastUpdated": "",
+  "novel": "WorldEvolver · 世界演化者",
+  "lastUpdated": "2026-04-14",
   "currentState": {
-    "chapter": 1,
+    "chapter": 5,
     "volume": 1,
-    "mainPlotStage": "开端",
-    "location": "[当前地点]",
-    "timepoint": "[故事时间]"
+    "mainPlotStage": "开端与大比前夕铺垫",
+    "location": "天机宗外门（后山石林与露天饭堂）",
+    "timepoint": "距离下个月大比还有不到十天"
   },
-
   "plotlines": {
     "main": {
-      "name": "[主线名称]",
-      "description": "[主线描述]",
+      "name": "外门求存与大比逆袭",
+      "description": "主角叶无痕面临被宗门逐出的危机，利用体内神秘封印和发掘的古碑阵纹强行提升实力，目标在下月大比闯入前十以获取更高资源。",
       "status": "active",
-      "currentNode": "[当前节点]",
-      "completedNodes": [],
-      "upcomingNodes": [],
+      "currentNode": "叶无痕在饭堂被外门第一人林昊公开孤立，争取到了绝佳的隐秘修炼时间",
+      "completedNodes": [
+        "大比排名末位，面临逐出危机（第1章）",
+        "确认体内封印转化液态灵力的实战威力（第2章）",
+        "荒灵原北侧越阶击杀铁鳞豹，发现古碑并掩埋（第3章）",
+        "用鲜血阵纹强冲第五脉，兑换自残功法《崩雷绝影步》（第4章）"
+      ],
+      "upcomingNodes": [
+        "石林终极苦修，掌控绝命爆发力",
+        "月度大比正式开启"
+      ],
       "plannedClimax": {
-        "chapter": null,
-        "description": ""
+        "chapter": 10,
+        "description": "外门大比擂台战，叶无痕以极其暴力的手段打破林昊等人的资源垄断，引发全场震撼。"
       }
     },
     "subplots": []
   },
-
   "foreshadowing": [
     {
       "id": "foreshadow-001",
-      "content": "[伏笔内容]",
+      "content": "叶无痕体内形似远古磨盘的神秘封印（魔族血脉容器）",
       "planted": {
-        "chapter": null,
-        "description": ""
+        "chapter": 1,
+        "description": "修炼时封印微颤，主动极度压缩灵气"
       },
-      "hints": [],
+      "hints": [
+        "能够碾碎并提纯狂暴灵气，转化出水银般极具破坏力的液态灵力"
+      ],
       "plannedReveal": {
         "chapter": null,
-        "description": ""
+        "description": "第一卷末尾突破凝灵境时封印失控暴露"
+      },
+      "status": "active",
+      "importance": "high"
+    },
+    {
+      "id": "foreshadow-002",
+      "content": "荒灵原北侧地下散发隐秘波动的暗红色残缺阵纹古碑",
+      "planted": {
+        "chapter": 3,
+        "description": "五阶妖兽在此刨土，石碑纹路引发叶无痕体内封印猛烈共鸣"
+      },
+      "hints": [
+        "仅描摹残损纹路就能产生暴戾的灵气‘劫掠’效果"
+      ],
+      "plannedReveal": {
+        "chapter": 13,
+        "description": "玩家大量聚集导致‘荒灵原洞府’世界级遗迹正式出世"
       },
       "status": "active",
       "importance": "high"
     }
   ],
-
   "conflicts": {
-    "active": [],
-    "resolved": [],
-    "upcoming": []
+    "active": [
+      "叶无痕 vs 林昊核心圈（资源封杀与排挤）",
+      "叶无痕 vs 自身四阶表象与五阶水银灵力肉体承载上限的矛盾"
+    ],
+    "resolved": [
+      "叶无痕 vs 五阶铁鳞豹（一拳秒杀）",
+      "叶无痕 vs 秦铁跟班（暗劲震断对方手臂）"
+    ],
+    "upcoming": [
+      "月度大比擂台对决（面对启脉七阶以上的外门霸主）"
+    ]
   },
-
   "checkpoints": {
     "volumeEnd": [],
     "majorEvents": []
   },
-
   "notes": {
     "plotHoles": [],
     "inconsistencies": [],
-    "reminders": []
+    "reminders": [
+      "注意叶无痕的表面修为依旧维持在‘启脉四阶’，这是他最大的情报障眼法。",
+      "后续注意描写他因为高强度爆发导致的鞋履和衣物损耗细节。"
+    ]
   }
 }

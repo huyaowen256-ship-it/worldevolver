@@ -1,78 +1,196 @@
 {
-  "novel": "[小说名称]",
-  "lastUpdated": "",
-
+  "novel": "WorldEvolver · 世界演化者",
+  "lastUpdated": "2026-04-14",
   "protagonist": {
-    "name": "[主角名]",
+    "name": "叶无痕",
     "currentStatus": {
       "alive": true,
-      "health": "良好",
-      "mentalState": "正常",
-      "location": "[当前位置]",
-      "chapter": 1,
-      "age": null,
-      "position": "[身份/职位]",
-      "possessions": [],
-      "skills": [],
-      "knowledge": []
+      "health": "强健（但常因极限施压而肌肉酸痛，体表常有血痂）",
+      "mentalState": "极度冷静、偏执、隐忍",
+      "location": "天机宗外门地字区木屋/后山石林",
+      "chapter": 5,
+      "age": 17,
+      "position": "天机宗外门弟子（当前排名第89）",
+      "possessions": [
+        "制式精钢匕首（已缺口）",
+        "描摹有古碑阵纹的破血布",
+        "《崩雷绝影步》残卷拓本玉简"
+      ],
+      "skills": [
+        "液态压缩变异灵力（水银灵力）",
+        "残缺劫掠阵纹（辅助修炼，副作用极大）",
+        "崩雷绝影步（初步掌握直线极速爆发，控制力待完善）"
+      ],
+      "knowledge": [
+        "先天体内封印的存在",
+        "荒灵原北侧存在引发封印共鸣的古老遗迹"
+      ]
     },
     "development": {
-      "arc": "[成长弧线描述]",
-      "milestones": [],
-      "currentPhase": "起点",
-      "nextGoal": ""
+      "arc": "从苟延残喘的末位废物，觉醒变态底牌后转变为冷酷的肉食者",
+      "milestones": [
+        "发现自身液态灵力的真实越阶杀伤力",
+        "强行贯通第五条先天灵脉",
+        "获得极致爆发但高危的身法技"
+      ],
+      "currentPhase": "为大比一飞冲天做极限武装准备阶段",
+      "nextGoal": "在下个月的外门大比进入前十，获取聚灵阵和藏经阁高层权限"
     },
     "relationships": {
       "summary": "见relationships.json详细信息",
       "key": {}
     }
   },
-
   "supportingCharacters": {
-    "[配角名]": {
-      "role": "[角色功能]",
-      "importance": "high|medium|low",
+    "林昊": {
+      "role": "竞争轴，前期核心压迫者，天生九脉极品天才",
+      "importance": "high",
       "status": {
         "alive": true,
         "lastSeen": {
-          "chapter": null,
-          "location": ""
+          "chapter": 5,
+          "location": "外门露天饭堂"
         },
-        "currentLocation": "unknown",
-        "occupation": ""
+        "currentLocation": "天机宗外门优等区",
+        "occupation": "外门排名第一弟子"
+      },
+      "arc": {
+        "planned": "被叶无痕打破高傲，化敌为竞争同伴或更深的宿敌",
+        "current": "高高在上，统治外门资源，制定规则"
+      },
+      "secrets": [],
+      "motivations": [
+        "晋升内门核心，不屑与凡人泥腿子为伍"
+      ]
+    },
+    "秦铁": {
+      "role": "中级反派/第一阶段强敌试金石",
+      "importance": "medium",
+      "status": {
+        "alive": true,
+        "lastSeen": {
+          "chapter": 5,
+          "location": "外门露天饭堂"
+        },
+        "currentLocation": "外门",
+        "occupation": "秦氏世家子弟，外门排名第七"
+      },
+      "arc": {
+        "planned": "在大比中被叶无痕以绝对肉身力量粉碎其横练骄傲",
+        "current": "察觉到了叶无痕隐藏的部分蛮力，但依然轻视"
+      },
+      "secrets": [],
+      "motivations": [
+        "巩固家族在宗门内地位，耀武扬威"
+      ]
+    },
+    "莫执事": {
+      "role": "资源守护者/剧情引导NPC",
+      "importance": "low",
+      "status": {
+        "alive": true,
+        "lastSeen": {
+          "chapter": 4,
+          "location": "外门藏经阁"
+        },
+        "currentLocation": "外门藏经阁一楼",
+        "occupation": "藏经阁看门执事"
       },
       "arc": {
         "planned": "",
-        "current": ""
+        "current": "半睡半醒，对底层弟子态度冷淡但不坏"
       },
       "secrets": [],
       "motivations": []
+    },
+    "张执事": {
+      "role": "规则执行者",
+      "importance": "medium",
+      "status": {
+        "alive": true,
+        "lastSeen": {
+          "chapter": 3,
+          "location": "外门任务堂"
+        },
+        "currentLocation": "任务堂",
+        "occupation": "外门任务堂执事，凝灵境中期"
+      },
+      "arc": {
+        "planned": "",
+        "current": "公事公办，对叶无痕击杀铁鳞豹感到些许意外"
+      },
+      "secrets": [],
+      "motivations": [
+        "维护宗门法则"
+      ]
     }
   },
-
   "characterGroups": {
-    "active": [],
+    "active": [
+      "外门前二十名精英圈子（林昊为首）"
+    ],
     "inactive": [],
     "deceased": []
   },
-
   "appearanceTracking": [
     {
       "chapter": 1,
       "appearances": [
         {
-          "character": "[角色名]",
-          "role": "主要|次要|背景",
-          "significance": ""
+          "character": "叶无痕",
+          "role": "主要",
+          "significance": "确立生存绝境被警告"
+        },
+        {
+          "character": "张执事",
+          "role": "次要",
+          "significance": "宣读死刑"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "appearances": [
+        {
+          "character": "莫执事",
+          "role": "背景",
+          "significance": "提示功法危险性"
+        },
+        {
+          "character": "秦铁",
+          "role": "过场",
+          "significance": "结下梁子"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "appearances": [
+        {
+          "character": "林昊",
+          "role": "主要配角",
+          "significance": "展现统治力下达封杀令"
+        },
+        {
+          "character": "秦铁",
+          "role": "次要",
+          "significance": "推动资源抢夺情节"
         }
       ]
     }
   ],
-
   "consistency": {
-    "physicalTraits": {},
-    "personalityTraits": {},
-    "speechPatterns": {},
-    "warnings": []
+    "physicalTraits": {
+      "叶无痕": "衣着寒酸（发白的灰衣，烂草鞋），由于常年营养不良体型有些削瘦，但肌肉极度致密，眼神如死水深潭。"
+    },
+    "personalityTraits": {
+      "叶无痕": "极度偏执于求存，不争口头意气，一旦动手绝不留情。"
+    },
+    "speechPatterns": {
+      "林昊": "高高在上，常用审判者的陈述句语气。"
+    },
+    "warnings": [
+      "AI必须注意不要让主角产生不必要的同情心或长篇大论的说教。"
+    ]
   }
 }
