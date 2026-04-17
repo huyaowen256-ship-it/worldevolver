@@ -1,0 +1,448 @@
+/* ============================================================
+   WorldEvolver · 天机宗设计系统
+   视觉语言：玉简卷轴 + 天机盘 + 烫金榜书
+   ============================================================ */
+
+:root {
+  /* ── 底色 ─────────────────────────────────────── */
+  --bg-void: #08080c;
+  --bg-scroll: #0f0e0b;
+  --bg-scroll-alt: #141210;
+  --bg-elevated: #1a1810;
+
+  /* ── 玉简 / 羊脂玉 ────────────────────────────── */
+  --jade-white: #e8e0d0;
+  --jade-surface: rgba(232, 224, 208, 0.05);
+  --jade-border: rgba(232, 224, 208, 0.10);
+  --jade-border-hover: rgba(232, 224, 208, 0.22);
+  --jade-inner: rgba(232, 224, 208, 0.03);
+
+  /* ── 烫金 / 榜书 ─────────────────────────────── */
+  --gold-primary: #c9a84c;
+  --gold-bright: #e8c96a;
+  --gold-dim: #7a6028;
+  --gold-glow: rgba(201, 168, 76, 0.25);
+
+  /* ── 玄青 / 灵脉 ─────────────────────────────── */
+  --xuanqing: #3d7a6e;
+  --xuanqing-bright: #5aab96;
+
+  /* ── 朱砂 / 陨落 ─────────────────────────────── */
+  --zhusha: #8b2020;
+  --zhusha-bright: #c0392b;
+  --zhusha-dim: #4a1010;
+
+  /* ── 紫青 / 因果 ─────────────────────────────── */
+  --karma: #6b4fa0;
+  --karma-bright: #9b72d4;
+  --karma-dim: #3d2a60;
+
+  /* ── 文字 ─────────────────────────────────────── */
+  --text-gold: #c9a84c;
+  --text-jade: #d4c9a8;
+  --text-muted: #7a7060;
+  --text-faint: #4a4438;
+  --text-inverted: #1a1810;
+
+  /* ── 间距/圆角 ────────────────────────────────── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* ── 过渡 ────────────────────────────────────── */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+}
+
+/* ── Reset ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-void);
+  background-image:
+    radial-gradient(ellipse at 20% -10%, rgba(107, 79, 160, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 110%, rgba(61, 122, 110, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, var(--bg-void) 0%, var(--bg-scroll) 100%);
+  background-attachment: fixed;
+  color: var(--text-jade);
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'SimSun', serif;
+  font-size: 16px;
+  line-height: 1.7;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── 玉简卷轴组件 ──────────────────────────────────────── */
+.jade-scroll {
+  background: var(--jade-surface);
+  border: 1px solid var(--jade-border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.jade-scroll::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(201,168,76,0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.jade-scroll:hover {
+  border-color: var(--jade-border-hover);
+  background: rgba(232, 224, 208, 0.07);
+}
+
+/* ── 烫金标题 ──────────────────────────────────────────── */
+.gold-title {
+  color: var(--gold-primary);
+  text-shadow: 0 0 20px var(--gold-glow), 0 2px 4px rgba(0,0,0,0.8);
+  letter-spacing: 0.08em;
+}
+
+.gold-title-bright {
+  color: var(--gold-bright);
+  text-shadow: 0 0 30px rgba(232,201,106,0.4), 0 2px 4px rgba(0,0,0,0.9);
+}
+
+/* ── 玄青文字 ─────────────────────────────────────────── */
+.xuanqing {
+  color: var(--xuanqing-bright);
+  text-shadow: 0 0 12px rgba(90,171,150,0.3);
+}
+
+/* ── 朱砂危险 ──────────────────────────────────────────── */
+.zhusha {
+  color: var(--zhusha-bright);
+  text-shadow: 0 0 12px rgba(192,57,43,0.4);
+}
+
+.zhusha-pulse {
+  animation: pulse-zhusha 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-zhusha {
+  0%, 100% { box-shadow: none; }
+  50% { box-shadow: 0 0 18px 4px rgba(192,57,43,0.35), 0 0 4px 1px rgba(192,57,43,0.6); }
+}
+
+/* ── 令牌按钮 ─────────────────────────────────────────── */
+.token-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--jade-surface);
+  border: 1px solid var(--jade-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-jade);
+  font-family: inherit;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.token-btn::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gold-dim);
+  transition: all var(--transition-base);
+}
+
+.token-btn:hover {
+  background: rgba(201,168,76,0.08);
+  border-color: var(--gold-dim);
+  color: var(--gold-bright);
+  transform: translateX(4px);
+}
+
+.token-btn:hover::before {
+  background: var(--gold-bright);
+  box-shadow: 0 0 8px rgba(232,201,106,0.5);
+}
+
+.token-btn-primary {
+  background: rgba(201,168,76,0.12);
+  border-color: var(--gold-dim);
+  color: var(--gold-bright);
+}
+
+.token-btn-primary:hover {
+  background: rgba(201,168,76,0.2);
+  border-color: var(--gold-bright);
+}
+
+/* ── 玉简表单元素 ──────────────────────────────────────── */
+.jade-input {
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid var(--jade-border);
+  color: var(--text-jade);
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.jade-input::placeholder { color: var(--text-faint); }
+.jade-input:focus { border-color: var(--gold-dim); background: rgba(0,0,0,0.6); }
+
+/* ── 法印按钮 ─────────────────────────────────────────── */
+.seal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: rgba(61,122,110,0.15);
+  border: 1px solid var(--xuanqing);
+  border-radius: var(--radius-sm);
+  color: var(--xuanqing-bright);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.seal-btn::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 2px;
+  border: 1px solid rgba(90,171,150,0.15);
+  pointer-events: none;
+}
+
+.seal-btn:hover {
+  background: rgba(61,122,110,0.25);
+  box-shadow: 0 0 16px rgba(90,171,150,0.25);
+  transform: translateY(-1px);
+}
+
+.seal-btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.seal-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.seal-btn-gold {
+  background: rgba(201,168,76,0.12);
+  border-color: var(--gold-dim);
+  color: var(--gold-bright);
+}
+
+.seal-btn-gold::after {
+  border-color: rgba(232,201,106,0.15);
+}
+
+.seal-btn-gold:hover {
+  background: rgba(201,168,76,0.22);
+  box-shadow: 0 0 16px var(--gold-glow);
+}
+
+.seal-btn-karma {
+  background: rgba(107,79,160,0.15);
+  border-color: var(--karma);
+  color: var(--karma-bright);
+}
+
+.seal-btn-karma::after {
+  border-color: rgba(155,114,212,0.15);
+}
+
+.seal-btn-karma:hover {
+  background: rgba(107,79,160,0.25);
+  box-shadow: 0 0 16px rgba(155,114,212,0.3);
+}
+
+/* ── 天机盘（状态卡） ──────────────────────────────────── */
+.tianji-panel {
+  background: var(--jade-surface);
+  border: 1px solid var(--jade-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  position: relative;
+}
+
+.tianji-panel::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.tianji-panel-karma::before {
+  background: linear-gradient(90deg, transparent, var(--karma), transparent);
+}
+
+.tianji-panel-danger::before {
+  background: linear-gradient(90deg, transparent, var(--zhusha), transparent);
+}
+
+/* ── 榜单条目 ──────────────────────────────────────────── */
+.rank-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(232,224,208,0.06);
+  transition: background var(--transition-fast);
+}
+
+.rank-row:last-child { border-bottom: none; }
+.rank-row:hover { background: rgba(232,224,208,0.04); }
+
+.rank-row-top1 { background: rgba(201,168,76,0.08); border-left: 3px solid var(--gold-primary); }
+.rank-row-top2 { background: rgba(201,168,76,0.04); border-left: 3px solid #a08540; }
+.rank-row-top3 { background: rgba(201,168,76,0.02); border-left: 3px solid #7a6028; }
+.rank-row-elim { background: rgba(139,32,32,0.08); border-left: 3px solid var(--zhusha); }
+
+/* ── 分割线 ────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--jade-border), transparent);
+  margin: 2rem 0;
+}
+
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+/* ── 标签徽章 ──────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.badge-gold {
+  background: rgba(201,168,76,0.15);
+  color: var(--gold-bright);
+  border: 1px solid rgba(201,168,76,0.3);
+}
+
+.badge-xuanqing {
+  background: rgba(61,122,110,0.15);
+  color: var(--xuanqing-bright);
+  border: 1px solid rgba(61,122,110,0.3);
+}
+
+.badge-karma {
+  background: rgba(107,79,160,0.15);
+  color: var(--karma-bright);
+  border: 1px solid rgba(107,79,160,0.3);
+}
+
+.badge-zhusha {
+  background: rgba(139,32,32,0.15);
+  color: var(--zhusha-bright);
+  border: 1px solid rgba(139,32,32,0.3);
+}
+
+/* ── 公告条目 ──────────────────────────────────────────── */
+.bulletin-item {
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--gold-dim);
+  background: rgba(0,0,0,0.25);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: 0.75rem;
+}
+
+.bulletin-item-karma { border-left-color: var(--karma); }
+.bulletin-item-danger { border-left-color: var(--zhusha); }
+.bulletin-item-xuanqing { border-left-color: var(--xuanqing); }
+
+/* ── 滚动条 ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+::-webkit-scrollbar-thumb { background: var(--jade-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── 工具类 ────────────────────────────────────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-gold { color: var(--text-gold); }
+.text-jade { color: var(--text-jade); }
+.text-muted { color: var(--text-muted); }
+.text-faint { color: var(--text-faint); }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+.gap-3 { gap: 1.5rem; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.w-full { width: 100%; }
+
+/* ── 布局 ─────────────────────────────────────────────── */
+.page-header {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--jade-border);
+  margin-bottom: 2.5rem;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+
+@media (max-width: 600px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .page-title { font-size: 1.6rem; }
+}

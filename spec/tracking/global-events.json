@@ -1,0 +1,11 @@
+{
+  "events": {
+    "huangling_yuan_ruins": {
+      "name": "荒灵原遗迹",
+      "zone": "荒灵原",
+      "ruins_exploration_heat": 0,
+      "threshold": 3,
+      "status": "dormant"
+    }
+  }
+}

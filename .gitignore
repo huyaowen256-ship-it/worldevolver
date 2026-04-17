@@ -12,3 +12,16 @@
 
 # 节点模块
 node_modules/
+
+# Environment variables (secrets)
+backend/.env
+backend/.env.local
+web/.env.local
+.env
+.env.local
+.env.*.local
+
+# SQLite database files
+*.db
+*.db-shm
+*.db-wal

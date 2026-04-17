@@ -1,0 +1,25 @@
+{
+  "name": "worldevolver-backend",
+  "version": "0.1.0",
+  "description": "WorldEvolver backend - AI game master, player management, batch processing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "batch": "node batch/runDaily.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.103.2",
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "drizzle-orm": "^0.38.4",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "node-cron": "^3.0.3",
+    "openai": "^4.86.2",
+    "zod": "^3.24.1"
+  },
+  "type": "module"
+}
